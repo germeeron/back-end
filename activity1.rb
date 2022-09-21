@@ -22,8 +22,17 @@ contacts = {"John Cruz" => {}, "Avion School" => {}}
 
 #4
 puts ("How old are you?")
-age = gets
+age = gets.to_i
 puts ("In 10 years, you will be: #{age + 10}\nIn 20 years, you will be: #{age + 20}\nIn 30 years, you will be: #{age + 30}\nIn 40 years, you will be: #{age + 40}")
+
+
+
+
+
+
+
+
+
 
 
 #activity 2
@@ -42,6 +51,7 @@ elsif 50 < number < 100
     "the number is between 51 and 100"
 else
     "the number is greater than 100"
+end
 
 
 #3
@@ -56,8 +66,13 @@ arr = [6, 3, 1, 8, 4, 2, 10, 65, 102]
 
 new_arr = []
 
-arr.each do |number|
-    if number.even?
-        new_arr.push(number)
-        puts new_arr
+def divisible_by_two(array)
+    arr.each do |number|
+        if number.even?
+            new_arr.push(number)
+        end
     end
+    new_arr
+end
+
+puts "#{divisible_by_two(arr)}"
