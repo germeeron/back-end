@@ -16,16 +16,3 @@ def is_perfect_square(x)
 end
     
 puts "#{is_perfect_square(15)}"
-
-
-#def check_square(x)
-    #i = 1
-    #until i * i >= x do
-        #if i * i == x do
-            #puts "yes"
-        #end
-        #i = i + 1
-    #end
-#end
-
-#puts "#{check_square(9)}" end
