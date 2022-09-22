@@ -1,7 +1,7 @@
 #activity 3
 
 def is_perfect_square(x)
-    i = 1
+    i = 0
     loop do
         if i * i == x
             puts "yes, #{x} is a perfect square"
@@ -15,7 +15,7 @@ def is_perfect_square(x)
     end
 end
     
-puts "#{is_perfect_square(25)}"
+puts "#{is_perfect_square(15)}"
 
 
 #def check_square(x)
