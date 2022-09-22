@@ -14,4 +14,9 @@ class Country
         puts @hello
     end
 
+    def visit
+        puts "going to #{@capital}"
+        say_hello
+    end
+
 end
