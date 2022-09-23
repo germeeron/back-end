@@ -7,6 +7,7 @@ class Country
         @language = language
         @hello = hello
         @language_status = :off
+        @location_status = :off
     end
 
     def say_hello
@@ -16,6 +17,7 @@ class Country
     end
 
     def visit
+        @location_status = :on
         puts "Arrived in #{@capital}..."
         say_hello
     end
