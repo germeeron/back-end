@@ -1,3 +1,5 @@
+#activity 5
+
 class Profile
 
     attr_accessor :full_name, :age, :address, :work

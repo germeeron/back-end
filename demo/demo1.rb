@@ -1,3 +1,5 @@
+# class demo 1
+
 class Employee              # parent class
     attr_accessor :sex, :age, :rating
 
