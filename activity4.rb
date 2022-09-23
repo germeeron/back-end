@@ -10,12 +10,13 @@ class Country
     end
 
     def say_hello
+        puts "Saying hello in #{@language}..."
         @language_status = :on
         puts @hello
     end
 
     def visit
-        puts "going to #{@capital}"
+        puts "Arrived in #{@capital}..."
         say_hello
     end
 
