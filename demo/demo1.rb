@@ -1,13 +1,14 @@
 # class demo 1
 
 class Employee              # parent class
-    attr_accessor :sex, :age, :rating
+    attr_accessor :sex, :age, :rating, :base_salary
 
     def initialize(age, sex)
         @sex = sex
         @age = age
         @active = true      # employed
         @rating = nil       # 1 to 5
+        @base_salary = 50000
     end
 
     def resign
@@ -19,13 +20,27 @@ class Employee              # parent class
     end
 end
 
+module OvertimePayable              # related behaviors, not class
+    def calculate_overtime_pay
+        base_salary * 2             #self.base_salary - self points to the instance = shawn = designer object
+    end
+end
+
+class Designer < Employee
+    include OvertimePayable
+end
+
 class Accountant < Employee         # child class
+    include OvertimePayable
+    
     def audit
         puts "Auditing..."
     end
 end
 
-class SoftwareEngineer < Employee   # child class
+class SoftwareEngineer < Employee   # child class, with related subclasses
+    include OvertimePayable
+
     def write_code
         puts "Lorem ipsum..."
     end
@@ -63,9 +78,9 @@ class CTO < Employee
         super
     end
 
-    def foobar
+    def display_age
         # puts "CTO's age is #{self.age()}"
-        puts "CTO's age is #{age}"      # implicit self
+        puts "CTO's age is #{age}"      # implicit self - self.age
     end
 end
 
@@ -91,7 +106,7 @@ end
 # puts joseph.write_code
 # puts vincent.write_code
 
-john = CTO.new(25, "M", 40)
+# john = CTO.new(25, "M", 40)
 # puts john.age
 # puts john.equity
 
@@ -104,5 +119,46 @@ john = CTO.new(25, "M", 40)
 #super      => will pass all original variables
 #super()    => zero variables
 
-puts john
-john.foobar
+# puts john
+# john.display_age
+
+# shawn = Designer.new(25, "M")
+
+# puts shawn.calculate_overtime_pay
+
+# method visibility
+
+# 1 - public
+# 2 - private
+# 3 - protected - essentially private with a twist
+
+class Foo
+    def main_method_one
+        puts "main one logic here"
+        helper_method
+    end
+
+    def main_method_two
+        puts "main two logic here"
+        helper_method
+    end
+
+    def main_method_three
+        puts "main three logic here"
+        helper_method
+    end
+
+    private         # for internal use only (within the class Foo)
+
+    def helper_method
+        puts "shared logic here"
+    end
+end
+
+foo = Foo.new
+
+foo.main_method_one
+foo.main_method_two
+foo.main_method_three
+
+foo.helper_method

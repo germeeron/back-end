@@ -1,3 +1,5 @@
+#activity 4
+
 class Country
 
     attr_accessor :capital, :language, :hello
