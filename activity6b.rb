@@ -11,11 +11,12 @@ class User
     end
     
     def login
-        puts "User logged in. IP address: #@{ip_address}"
+        puts "#{username} logged in. IP address: #{ip_address}"
     end
 
-    def change_password(new_password)
+    def change_password=(new_password)
         @password = new_password
+        puts "#{username} changed their password."
     end
 end
 
