@@ -1,26 +1,26 @@
 #activity 6a
 
 class Confection
-    def prepare_method
+    def prepare
         puts "Baking at 350 degrees for 25 minutes"
     end
 end
 
 class Cupcake < Confection
-    def prepare_method
+    def prepare
         super
         puts "Applying frosting"
     end
 end
 
 class BananaCake < Confection
-    def prepare_method
+    def prepare
         super
     end
 end
 
 cupcake = Cupcake.new
-cupcake.prepare_method
+cupcake.prepare
 
 bananacake = BananaCake.new
-bananacake.prepare_method
+bananacake.prepare
