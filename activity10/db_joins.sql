@@ -8,7 +8,7 @@ SELECT * FROM students;
 CREATE TABLE notes (
 	id integer PRIMARY KEY,
 	body text NOT NULL,
-	student_id integer
+	student_id integer REFERENCES students(id)
 );
 
 
