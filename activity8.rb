@@ -1,13 +1,12 @@
 def is_isogram(word)
     i = 0
-    x = []
     word = word.downcase
     while i <= word.length
         y = word.count(word[i].to_s)
-        x << y
+        return false if y > 1
         i = i + 1
     end
-    return x.any?{|x| x > 1} ? false : true
+    return true
 end
 
 puts is_isogram("Dermatoglyphics")
