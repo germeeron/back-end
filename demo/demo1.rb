@@ -41,7 +41,7 @@ end
 class SoftwareEngineer < Employee   # child class, with related subclasses
     include OvertimePayable
 
-    def write_code
+    def write_code                  # verb_noun
         puts "Lorem ipsum..."
     end
 end
@@ -60,7 +60,7 @@ end
 
 class Manager < Employee            # child class
     def evaluate_performance(employee, rating)
-        employee.rating = rating
+        employee.rating = rating                # if it quacks like an employee, then it is an employee => if it responds to the rating as a method, then it is an employee
         puts "New rating is #{employee.rating}"
     end
 end
