@@ -1,4 +1,4 @@
--- activity 1 - database
+-- database activity 1
 
 CREATE TABLE students (
 	id integer PRIMARY KEY,
