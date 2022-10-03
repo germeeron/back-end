@@ -1,4 +1,4 @@
-# september 24, 2022
+# 24 september 2022
 
 # 4 pillars / principles of oop
 
