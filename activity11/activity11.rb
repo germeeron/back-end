@@ -3,12 +3,13 @@ def unique_in_order(input)
         input = input.split(//)
     end
 
+    y = []
     input.each_with_index do | element, i |
-        if (element == input[i + 1])
-            input.delete_at(i + 1)
+        if (element != input[i + 1])
+            new_arr << element
         end
     end
-    puts input
+    return new_arr
 end
 
 puts unique_in_order("AAAABBBCCDAABBB")
