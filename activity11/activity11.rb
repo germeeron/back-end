@@ -9,7 +9,8 @@ def unique_in_order(input)
             new_arr << element
         end
     end
-    return new_arr
+    
+    new_arr
 end
 
 puts unique_in_order("AAAABBBCCDAABBB")
